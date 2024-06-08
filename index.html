@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games">
+  <meta name="keywords" content="ThinkThrice, Multi-Agent LLMs">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Dekun Wu<sup>1,2</sup>,</span>
+            <span class="author-block">
+              Haochen Shi<sup>1,2</sup>,</span>
+            <span class="author-block">
+              Zhiyuan Sun<sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              Bang Liu</a><sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Montreal, </span>
+            <span class="author-block"><sup>2</sup>Mila</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <h2 class="title is-5">ACL 2024 Findings</h2>
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2312.00746"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.00746"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/jackwu502/ThinkThrice"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/jackwu502/ThinkThrice"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+In this study, we explore the application of Large Language Models (LLMs) in \textit{Jubensha}, a Chinese detective role-playing game and a novel area in Artificial Intelligence (AI) driven gaming. We introduce the first dataset specifically for Jubensha, including character scripts and game rules, to foster AI agent development in this complex narrative environment. Our work also presents a unique multi-agent interaction framework using LLMs, allowing AI agents to autonomously engage in this game. To evaluate the gaming performance of these AI agents, we developed novel methods measuring their mastery of case information and reasoning skills. Furthermore, we incorporated the latest advancements in in-context learning to improve the agents' performance in information gathering, murderer identification, and logical reasoning. The experimental results validate the effectiveness of our proposed methods. This work aims to offer a novel perspective on understanding LLM capabilities and establish a new benchmark for evaluating large language model-based agents.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="100%">
+            <source src="./static/videos/Jubensha_demo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+    <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Background of Jubensha Game</h2>
+
+            <div class="content has-text-centered">
+            <img src="./static/images/Jubensha.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="45%"
+                 />
+          </div>
+          <div class="content has-text-justified">
+          <p>
+Jubensha is a detective role-playing game with multiple players, where each player is assigned a unique role tied to a central murder mystery. The game process typically consists of six stages: 1) Each player selects a script for distinct characters in a Jubensha game. 2) Players are assigned with a role (murderer or civilian) associated with their selected scripts. 3) The players read their scripts to develop a basic understanding of the whole story from their views. 4) Each player is given a pool of clues to help them reveal or hide critical details for finding the murderer. 5) Several rounds of group discussion are held among the players to share information and find out the murderer. 6). Finally, each player anonymously votes to decide the murderer. The civilians win the game if the true murderer gets the most votes, otherwise, the murderer wins.
+          </p>
+           </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+        <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Dataset Statistics</h2>
+
+            <div class="content has-text-centered">
+            <img src="./static/images/dataset_stats.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="50%"
+                 />
+          </div>
+        <div class="content has-text-justified">
+          <p>
+To establish an environment capable of evaluating Jubensha agents and to facilitate future scaled-up works, we collect 1,115 instances of Jubensha games from Chinese online sources.  Each game consists of a host manual describing how to control the game process and a God's-eye view of case replays, along with individual scripts for each character in the game. As demonstrated in Table 1, the number of players can vary from 1 to 20, and the number of tokens for the game can be as large as 518k, facilitating further research on socially intelligent AI and introducing extra-long text comprehension and reasoning challenges. Besides, as shown in Table 2, some of these scripts also contain multimodal clues, including audio and video. To create a unified experimental environment, this work concentrates exclusively on text-modality Jubensha games.
+          </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+        <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">ThinkThrice Framework</h2>
+
+            <div class="content has-text-centered">
+            <img src="./static/images/Framework_v3.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="98%"
+                 />
+          </div>
+        <div class="content has-text-justified">
+          <p>
+Illustration of our proposed ThinkThrice framework for enhancing agent's performance in multi-agent detective games (i.e., Jubensha). The three different colors of the arrows indicate the data flows of three stages: 1) Initial answer generation with Memory Retrieval; 2) Enhance answer with Self-Refinement; 3) Verify answer with Self-Verification. The brown texts in the refined answer are new information added to the initial answer.
+          </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+        <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Evaluating LLM-based Agents in Jubensha Games</h2>
+
+            <div class="content has-text-centered">
+            <img src="./static/images/fact_ques.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="40%"
+                 />
+                        <img src="./static/images/infer_ques.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="40%"
+                 />
+          </div>
+        <div class="content has-text-justified">
+          <p>
+Previous work has primarily employed metrics such as human-likeness and win rate to assess the performance of LLM-based agents in games. These metrics either require substantial human involvement or likely leading to less reliable experimental conclusions due to the challenges in controlling variables. Considering the unique characteristics of Jubensha games, we have designed two tasks to quantitatively and qualitatively evaluate the performance of LLM-based agents in Jubensha games: Factual Question Answering and Inferential Question Answering.
+          </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+        <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Evaluation on Agents' Responses to Factual Questions</h2>
+
+            <div class="content has-text-centered">
+            <img src="./static/images/exp1.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="60%"
+                 />
+          </div>
+        <div class="content has-text-justified">
+          <p>
+The evaluation results show that agents performed well in answering questions from their own scripts due to full access to the information. Without the Memory Retriever (MR) module, agents were in a memoryless state, resulting in higher accuracy for self-related questions than those about others. Introducing the MR module improved accuracy for questions about others, thanks to the increased information from interactions. The combination of the MR, Self-Refinement (SR), and Self-Verification (SV) modules yielded the best results, enhancing communication efficiency and information acquisition in the Jubensha game.
+          </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+        <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Evaluation of Agent's Responses to Inferential Questions</h2>
+
+            <div class="content has-text-centered">
+            <img src="./static/images/exp2.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="60%"
+                 />
+            <p style="text-align: left; margin-top: 10px; font-weight: bold;">Figure 4: GPT-3.5 and GPT-4's performance with different methods, where overall accuracy measure the raw correct percentage and informed accuracy take LLM's reasoning ability into consideration. FSA stands for 'Full Script Access', indicating that agents have access to the complete scripts of all players.</p>
+          </div>
+        <div class="content has-text-justified">
+          <p>
+To evaluate the reasoning capabilities of LLM-based agents, we used a set of inferential questions. Figure above shows the results, with Overall Accuracy indicating correct answers without considering rationale, and Informed Accuracy counting correct answers with correct reasoning. Key observations from the results are: 1) More information improves agents' problem-solving abilities. GPT-4 agents with full script access achieved the highest overall and informed accuracy, followed by those with MR+SR+SV(N=3) modules. 2) The LLMs' ability to utilize information significantly impacts performance. Upgrading from GPT-3.5 to GPT-4 can nearly triple overall and informed accuracy.
+          </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+        <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Qualitative Analysis</h2>
+
+            <div class="content has-text-centered">
+            <img src="./static/images/exp3.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."
+                 width="80%"
+                 />
+          </div>
+        <div class="content has-text-justified">
+          <p>
+Table 7 presents a qualitative analysis where agents answer an inferential question and provide their reasoning. Each rationale is scored with a GPT Eval Score, comparing it to the ground truth rationale found in Table 4. The analysis shows that with Full Script Access, agents identify relevant premises and draw solid conclusions. With MR+SR+SV (N=3), agents lack specific details, leading to plausible but not definitive conclusions. Agents with MR or No MR, missing key details, often use irrelevant or flawed premises, resulting in weak conclusions. This demonstrates the importance of key information in enhancing reasoning performance.
+          </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Conclusion</h2>
+
+        <div class="content has-text-justified">
+          <p>
+This work has explored the application of large language models in complex interactive environments, exemplified by the Chinese detective role-playing game "Jubensha". Our research has yielded four main contributions: the creation of a specialized dataset tailored for the Jubensha games, the design of a multi-agent interaction framework for the automatic conduct of Jubensha games, the development of a set of quantitative and qualitative assessment methods to measure the information gathering and reasoning abilities of LLM-based agents within the game, and the utilization of the latest in-context learning techniques to devise modules that enhance the performance of LLM-based agents. We have empirically demonstrated that our designed multi-agent interaction framework and the in-context learning modules significantly improve upon the baseline in terms of information gathering, murderer identification, and reasoning capabilities. We believe this research will advance the community's knowledge of LLM-based agents and offers a new perspective on evaluating the performance of LLMs in a complex, plot-driven, and adversarial reasoning game environment constrained by narrative contexts.
+          </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section> -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{wu2024deciphering,
+      title={Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games}, 
+      author={Dekun Wu and Haochen Shi and Zhiyuan Sun and Bang Liu},
+      year={2024},
+      eprint={2312.00746},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page is adapted from  <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page, and is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>  
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
