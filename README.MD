@@ -28,7 +28,7 @@ Planned future work includes:
 If you find this work useful in your research, please consider citing our paper:
 
 ```bibtex
-@inproceedings{wu2024deciphering,
+@inproceedings{wu2024thinkthrice,
   title={Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games},
   author={Dekun Wu and Haochen Shi and Zhiyuan Sun and Bang Liu},
   booktitle={Findings of the Association for Computational Linguistics: ACL 2024},
