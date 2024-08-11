@@ -1,4 +1,4 @@
-## ACL 2024 Findings: Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games
+## ThinkThrice
 
 This repository contains the code and resources for our ACL 2024 Findings paper titled "**Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games**." You can access the paper via [this link](#).
 
