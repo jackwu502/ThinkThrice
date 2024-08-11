@@ -26,13 +26,14 @@ This repository currently includes:
 If you find this work useful in your research, please consider citing our paper:
 
 ```bibtex
-@inproceedings{wu2024thinkthrice,
-  title={Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games},
-  author={Dekun Wu and Haochen Shi and Zhiyuan Sun and Bang Liu},
-  booktitle={Findings of the Association for Computational Linguistics: ACL 2024},
-  year={2024},
-  address={Bangkok, Thailand},
-  publisher={Association for Computational Linguistics}
+@misc{wu2024decipheringdigitaldetectivesunderstanding,
+      title={Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games}, 
+      author={Dekun Wu and Haochen Shi and Zhiyuan Sun and Bang Liu},
+      year={2024},
+      eprint={2312.00746},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2312.00746}, 
 }
 ```
 ```
