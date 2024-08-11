@@ -17,8 +17,6 @@ To run the code in this repository, please follow these steps:
 
 This repository currently includes:
 - [x] **LLM-based Agents Self-Playing Jubensha Games**
-
-Planned future work includes:
 - [ ] Evaluation on factual question answering
 - [ ] Evaluation on inferential question answering
 - [ ] Evaluation on murderer identification
