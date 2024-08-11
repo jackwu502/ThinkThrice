@@ -13,7 +13,7 @@ To run the code in this repository, please follow these steps:
    python game_play.py
    ```
 
-## To-Do List
+## Status
 
 This repository currently includes:
 - [x] **LLM-based Agents Self-Playing Jubensha Games**
