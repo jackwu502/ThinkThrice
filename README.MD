@@ -26,14 +26,23 @@ This repository currently includes:
 If you find this work useful in your research, please consider citing our paper:
 
 ```bibtex
-@misc{wu2024decipheringdigitaldetectivesunderstanding,
-      title={Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games}, 
-      author={Dekun Wu and Haochen Shi and Zhiyuan Sun and Bang Liu},
-      year={2024},
-      eprint={2312.00746},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2312.00746}, 
+@inproceedings{wu-etal-2024-deciphering,
+    title = "Deciphering Digital Detectives: Understanding {LLM} Behaviors and Capabilities in Multi-Agent Mystery Games",
+    author = "Wu, Dekun  and
+      Shi, Haochen  and
+      Sun, Zhiyuan  and
+      Liu, Bang",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Findings of the Association for Computational Linguistics ACL 2024",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand and virtual meeting",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-acl.490",
+    pages = "8225--8291",
+    abstract = "In this study, we explore the application of Large Language Models (LLMs) in Jubensha, a Chinese detective role-playing game and a novel area in Artificial Intelligence (AI) driven gaming. We introduce the first dataset specifically for Jubensha, including character scripts and game rules, to foster AI agent development in this complex narrative environment. Our work also presents a unique multi-agent interaction framework using LLMs, allowing AI agents to autonomously engage in Jubensha games. To evaluate the gaming performance of these AI agents, we developed novel methods measuring their mastery of case information and reasoning skills. Furthermore, we incorporated the latest advancements in prompting engineering to enhance the agents{'} performance in information gathering, murderer identification, and logical reasoning. The experimental results validate the effectiveness of our proposed methods. This work aims to offer a novel perspective on understanding LLM capabilities and establish a new benchmark for evaluating large language model-based agents.",
 }
 ```
 ```
