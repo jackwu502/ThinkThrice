@@ -13,7 +13,9 @@ To run the code in this repository, please follow these steps:
    ```bash
    mkdir scripts
 
-3. **Run the Code**: Once you have access to the data, you can execute the main script by running:
+3. **Move Data Files**: Download the JSON data files and move them into the scripts directory.
+
+4. **Run the Code**: Once you have access to the data, you can execute the main script by running:
    ```bash
    python game_play.py
    ```
