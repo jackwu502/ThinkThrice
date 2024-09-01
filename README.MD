@@ -8,7 +8,12 @@ To run the code in this repository, please follow these steps:
 
 1. **Request Data Access**: Before running the code, please fill out [this Google Form](https://forms.gle/a2gTSd9fKBC6k4vL7) to request access to the necessary data.
 
-2. **Run the Code**: Once you have access to the data, you can execute the main script by running:
+2. **Create a Directory for Scripts**: 
+   After you have access to the data, create a `scripts` directory by running:
+   ```bash
+   mkdir script
+
+3. **Run the Code**: Once you have access to the data, you can execute the main script by running:
    ```bash
    python game_play.py
    ```
