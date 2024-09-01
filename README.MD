@@ -11,7 +11,7 @@ To run the code in this repository, please follow these steps:
 2. **Create a Directory for Scripts**: 
    After you have access to the data, create a `scripts` directory by running:
    ```bash
-   mkdir script
+   mkdir scripts
 
 3. **Run the Code**: Once you have access to the data, you can execute the main script by running:
    ```bash
